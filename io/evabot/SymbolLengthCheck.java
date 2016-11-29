@@ -1,9 +1,10 @@
 package io.evabot;
+
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 import java.io.IOException;
 
-public class IsValidJavaCheck {
+public class SymbolLengthCheck {
   public static void main(String[] args)
     throws IOException
   {
@@ -13,6 +14,6 @@ public class IsValidJavaCheck {
     parser.setErrorHandler(new BailErrorStrategy());
     ParseTree tree = parser.compilationUnit();
     ParseTreeWalker walker = new ParseTreeWalker();
-    walker.walk(new Java8BaseListener(), tree);
+    walker.walk(new Java8Walker(), tree);
   }
 }
